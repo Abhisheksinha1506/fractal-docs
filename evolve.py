@@ -54,5 +54,14 @@ Last Updated: {state['last_updated']}
     with open(readme_path, 'w') as f:
         f.write(readme_content)
 
+    # Generate human summary
+    symbol_count = len(new_axiom)
+    summary = f"The fractal documentation has reached Iteration {state['iteration']}. "
+    summary += f"The 'DNA' of the plant has expanded to {symbol_count} symbols today. "
+    summary += "New branches and leaves have been mathematically added to the documentation structure."
+
+    with open(os.path.join(base_dir, 'summary.txt'), 'w') as f:
+        f.write(summary)
+
 if __name__ == "__main__":
     evolve()
