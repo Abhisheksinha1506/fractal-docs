@@ -51,17 +51,40 @@ Last Updated: {state['last_updated']}
 {new_axiom[:500]} {"..." if len(new_axiom) > 500 else ""}
 """
 
+    # L-System special: we inject the plant visualization AND the status
+    readme_content = f"""# 🌿 Fractal Docs (L-System Documentation)
+
+> "Documentation that grows like a plant, branching into infinite complexity."
+
+### 📢 Latest Status
+<!-- LATEST_STATUS_START -->
+> {summary}
+<!-- LATEST_STATUS_END -->
+
+### 📖 The Analogy
+Have you ever noticed how a tree branch looks like a smaller version of the whole tree? That's a fractal. This repository uses a mathematical language called an "L-System" to grow text in the same way a fern or a tree grows its leaves.
+
+### 🌱 Current Plant Growth (Iteration {state['iteration']})
+```text
+{new_axiom}
+```
+
+### 🌱 How it Evolves
+This README is rewritten every night by a mathematical gardener:
+1. **Reading the DNA**: The rules are stored in [rules.json](rules.json).
+2. **Growing the Branch**: The current "plant" in [state.json](state.json) is expanded.
+3. **Updating the Page**: The result is rendered right here in this README.
+
+**The plant grows on its own schedule, following its internal logic.**
+
+### 🔍 Quick Links
+- [Current DNA (Rules)](rules.json) — See the branching rules.
+- [Growth State](state.json) — The raw symbols of the current iteration.
+- [The Gardener](evolve.py) — The script that rewrites this documentation.
+"""
     with open(readme_path, 'w') as f:
         f.write(readme_content)
 
-    # Generate human summary
-    symbol_count = len(new_axiom)
-    summary = f"The fractal documentation has reached Iteration {state['iteration']}. "
-    summary += f"The 'DNA' of the plant has expanded to {symbol_count} symbols today. "
-    summary += "New branches and leaves have been mathematically added to the documentation structure."
-
-    with open(os.path.join(base_dir, 'summary.txt'), 'w') as f:
-        f.write(summary)
-
 if __name__ == "__main__":
     evolve()
+
