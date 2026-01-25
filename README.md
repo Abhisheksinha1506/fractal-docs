@@ -1,67 +1,21 @@
-# L-System Fractal Documentation
+# 🌿 Fractal Docs (L-System Documentation)
 
-This documentation grows fractally every day.
+> "Documentation that grows like a plant, branching into infinite complexity."
 
-## Current State
-Iteration: 3
-Last Updated: 2026-01-25
+### 📖 The Analogy
+Have you ever noticed how a tree branch looks like a smaller version of the whole tree? That's a fractal. This repository uses a mathematical language called an "L-System" to grow text in the same way a fern or a tree grows its leaves.
 
-## Growth Pattern
-```text
-FFFF
-  [+FF
-  [+F
-  [+X]
-F
-  [-X]
-+X]
-FF
-  [-F
-  [+X]
-F
-  [-X]
-+X]
-+F
-  [+X]
-F
-  [-X]
-+X]
-FFFF
-  [-FF
-  [+F
-  [+X]
-F
-  [-X]
-+X]
-FF
-  [-F
-  [+X]
-F
-  [-X]
-+X]
-+F
-  [+X]
-F
-  [-X]
-+X]
-+FF
-  [+F
-  [+X]
-F
-  [-X]
-+X]
-FF
-  [-F
-  [+X]
-F
-  [-X]
-+X]
-+F
-  [+X]
-F
-  [-X]
-+X 
-```
+We start with a single "seed" (a character like 'X'). Every day, that seed follows a set of "DNA rules" to branch out into more characters. Over time, the text becomes a massive, branching structure that looks like a digital plant.
 
-## Raw Symbols
-FFFF[+FF[+F[+X]F[-X]+X]FF[-F[+X]F[-X]+X]+F[+X]F[-X]+X]FFFF[-FF[+F[+X]F[-X]+X]FF[-F[+X]F[-X]+X]+F[+X]F[-X]+X]+FF[+F[+X]F[-X]+X]FF[-F[+X]F[-X]+X]+F[+X]F[-X]+X 
+### 🌱 How it Evolves
+This README is rewritten every night by a mathematical gardener:
+1. **Reading the DNA**: The rules are stored in [rules.json](rules.json).
+2. **Growing the Branch**: The current "plant" in [state.json](state.json) is expanded.
+3. **Updating the Page**: The result is rendered right here in this README.
+
+**The plant grows on its own schedule, following its internal logic.**
+
+### 🔍 Quick Links
+- [Current DNA (Rules)](rules.json) — See the branching rules.
+- [Growth State](state.json) — The raw symbols of the current iteration.
+- [The Gardener](evolve.py) — The script that rewrites this documentation.
