@@ -22,6 +22,11 @@ def evolve():
         new_axiom += rules.get(char, char)
 
     # Update state
+    # CAP growth to prevent exceeding GitHub file size limits
+    if len(new_axiom) > 100000:
+        print(f"⚠️ Axiom length ({len(new_axiom)}) exceeds 100k cap. Pruning to maintain stability.")
+        new_axiom = new_axiom[:100000]
+    
     state["axiom"] = new_axiom
     state["iteration"] += 1
     state["last_updated"] = datetime.date.today().isoformat()
